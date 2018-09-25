@@ -1,0 +1,65 @@
+<% include ../partials/header %>
+<div class="row">
+  <div class="col-md-3">
+    <p class="lead">Discuss Beer</p>
+  </div>
+  <div class="col-md-9">
+    <div class="thumbnail">
+      <img class="img-responsive" src="<%= beer.image %>">
+      <div class="caption-full">
+        <div class="row">
+        <div class="col-md-6">
+        <h4><a href="brewery/<%= beer.brewery %>"><%=beer.brewery%></a></h4>
+        <h4><%=beer.name%></h4>
+        </div>
+        <div class="col-md-6">
+         <h4>
+          Beer Price: $<%= beer.cost %>
+        </h4>
+        <h4>
+          Beer Rating: <%= beer.rating %> out of 5 Stars
+        </h4>
+        </div>
+        </div>
+        <p><%= beer.description %></p>
+        <p>
+          <em>Submitted by: <a href="/users/<%= beer.author.id %>">
+            <%= beer.author.username %></a>, <%= moment(beer.createdAt).fromNow() %></em>
+        </p>
+        <% if(currentUser && beer.author.id.equals(currentUser._id) || currentUser && currentUser.isAdmin){ %>
+        <a class="btn btn-warning" href="/beers/<%= beer._id %>/edit">Edit</a>
+        <form action="/beers/<%= beer._id %>?_method=DELETE" method="POST" class="delete-form">
+          <button class="btn btn-danger">Delete</button>
+        </form>
+        <% } %>
+      </div>
+    </div>
+    <div class="well">
+      <div class="text-right">
+        <a class="btn btn-success" href="/beers/<%= beer._id %>/comments/new">Add New Comment</a>
+      </div>
+      <hr>
+      <% beer.comments.forEach(function(comment){ %>
+      <div class="row">
+        <div class="comment col-md-12">
+          <strong><%= comment.author.username %></strong>
+          <span class="pull-right"><%= moment(comment.createdAt).fromNow() %></span>
+          <div>
+           <%= comment.text %> 
+           <% if(currentUser && comment.author.id.equals(currentUser._id) || currentUser && currentUser.isAdmin){ %>
+            <div class="pull-right">
+              <a href="/beers/<%=beer._id%>/comments/<%=comment._id%>/edit" class="btn btn-xs btn-warning">EDIT</a>
+              <form class="delete-form" action="/beers/<%=beer._id%>/comments/<%=comment._id%>?_method=DELETE" method="POST">
+                <button class="btn btn-xs btn-danger">DELETE</button>
+              </form>
+            </div>
+          <% } %>
+          <hr>
+        </div>
+      </div>
+    </div>
+    <% }) %>
+  </div>
+</div>
+</div>
+<% include ../partials/footer %>
