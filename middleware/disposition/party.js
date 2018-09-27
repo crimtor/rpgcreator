@@ -1,0 +1,3 @@
+var party = {
+    disposition: "Party"
+};
