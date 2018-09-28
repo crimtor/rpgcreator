@@ -1,4 +1,5 @@
 var dwarf = {
+    race: "Dwarf",
     maleNames: [
 "Bramnam",
 "Ebdir",

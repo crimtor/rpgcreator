@@ -10,7 +10,9 @@ body {
   margin-bottom: 60px;
 }
 
-
+form {
+  text-align: center;
+}
 
 .comment {
   background-color: lightblue;
@@ -51,6 +53,68 @@ body {
   margin-top: -0.3em;
   padding-right: 0.3em;
   height: 1.5em;
+}
+
+.sex {
+  background-color: #E8E8FC;
+  padding: 20px;
+  border-radius: 10px 10px 0 0;
+  margin: 0;
+}
+.race {
+  background-color:  #EDEDFD;
+  padding: 20px;
+  margin: 0;
+}
+.cclass {
+  background-color:   #E8E8FC;
+  padding: 20px;
+  margin: 0;
+}
+.role {
+  background-color:  #EDEDFD;
+  padding: 20px;
+  margin: 0;
+}
+.cstyle {
+  background-color:   #E8E8FC;
+  padding: 20px;
+  margin: 0;
+}
+.disposition {
+  background-color:  #EDEDFD;
+  padding: 20px;
+  margin: 0;
+}
+.force {
+  background-color:   #E8E8FC;
+  padding: 20px;
+  margin: 0;
+  border-radius: 0 0 10px 10px;
+}
+
+.fsubmit {
+margin-top: 15px;  
+}
+
+input[type="radio"].toggle {
+  display: none;
+}
+input[type="radio"].toggle + label {
+  width: 7em;
+  box-shadow: 1px 1px #2F4F4F;
+  background-color: #fbfbfb;
+  margin: 2px;
+  font-weight: bolder;
+}
+
+input[type="radio"].toggle:checked + label {
+  /* Do something special with the selected state */
+  background-color: steelblue;
+}
+input[type="radio"].toggle:checked + .female {
+  /* Do something special with the selected state */
+  background-color: pink;
 }
 
 /* Flexbox grid fix */

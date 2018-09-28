@@ -1,4 +1,5 @@
 var orc = {
+    race: "Orc",
     maleNames: [
 "lud Joint Axe",
 "brad Rib Axe",

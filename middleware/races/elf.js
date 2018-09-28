@@ -1,4 +1,5 @@
 var elf = {
+    race: "Elf",
     maleNames: [
 "Virdithas",
 "Uripeiros",

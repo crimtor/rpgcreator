@@ -1,4 +1,5 @@
 var human = {
+    race: "Human",
 maleNames: ["Cyrus",
 "Hadley",
 "Stanislaus",

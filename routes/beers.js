@@ -1,6 +1,6 @@
 var express = require("express");
 var router  = express.Router();
-var Beer = require("../models/beer");
+var Beer = require("../models/character");
 var Comment = require("../models/comment");
 var middleware = require("../middleware");
 var { isLoggedIn, checkUserBeer, checkUserComment, isAdmin, isSafe } = middleware; // destructuring assignment
@@ -31,23 +31,23 @@ router.get("/", function(req, res){
             if(req.xhr) {
               res.json(allBeers);
             } else {
-              res.render("beers/index",{beers: allBeers, page: 'beers'});
+              res.render("characters/index",{beers: allBeers, page: 'beers'});
             }
          }
       });
   }
 });
 
-router.get("/brewery/:breweryname", function(req, res){
-      // Get all beers from DB
-      Beer.find().where('brewery').equals(req.params.breweryname).exec(function(err, beers) {
-      if(err) {
-        req.flash("error", "Something went wrong.");
-        res.redirect("/");
-      }
-      res.render("brewery/show", {beers: beers});
-    });
-});
+// router.get("/brewery/:breweryname", function(req, res){
+//       // Get all beers from DB
+//       Beer.find().where('brewery').equals(req.params.breweryname).exec(function(err, beers) {
+//       if(err) {
+//         req.flash("error", "Something went wrong.");
+//         res.redirect("/");
+//       }
+//       res.render("brewery/show", {beers: beers});
+//     });
+// });
 
 //CREATE - add new beer to DB
 router.post("/", isLoggedIn, isSafe, function(req, res){
@@ -72,14 +72,14 @@ var newBeer = {brewery: brewery, name: name, image: image, description: desc, st
         } else {
             //redirect back to beers page
             req.flash('success', 'New Beer Created');
-            res.redirect("/beers");
+            res.redirect("/characters");
         }
     });
 });
 
 //NEW - show form to create new beer
 router.get("/new", isLoggedIn, function(req, res){
-   res.render("beers/new"); 
+   res.render("characters/new"); 
 });
 
 // SHOW - shows more info about one beer
@@ -89,7 +89,7 @@ router.get("/:id", function(req, res){
         if(err || !foundBeer){
             console.log(err);
             req.flash('error', 'Sorry, that beer does not exist!');
-            return res.redirect('/beers');
+            return res.redirect('/characters');
         }
         //render show template with that beer
         res.render("beers/show", {beer: foundBeer});
@@ -99,7 +99,7 @@ router.get("/:id", function(req, res){
 // EDIT - shows edit form for a beer
 router.get("/:id/edit", isLoggedIn, checkUserBeer, function(req, res){
   //render edit template with that beer
-  res.render("beers/edit", {beer: req.beer});
+  res.render("characters/edit", {beer: req.beer});
 });
 
 // PUT - updates beer in the database
@@ -112,7 +112,7 @@ router.put("/:id", isLoggedIn, checkUserBeer, isSafe, function(req, res){
             res.redirect("back");
         } else {
             req.flash("success", "Successfully Updated!");
-            res.redirect("/beers/" + beer._id);
+            res.redirect("/characters/" + beer._id);
         }
     });
 });
@@ -134,7 +134,7 @@ router.delete("/:id", isLoggedIn, checkUserBeer, function(req, res) {
                 return res.redirect('/');
             }
             req.flash('error', 'Beer Deleted!');
-            res.redirect('/beers');
+            res.redirect('/characters');
           });
       }
     });

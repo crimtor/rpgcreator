@@ -1,4 +1,5 @@
 var centaur = {
+    race: "Centaur",
     maleNames: [
 "Seovera Sharpskull",
 "Seesfin Sharpbody",

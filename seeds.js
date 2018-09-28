@@ -1,5 +1,5 @@
     var mongoose = require("mongoose");
-    var Beer = require("./models/beer");
+    var Beer = require("./models/character");
     var Comment   = require("./models/comment");
      
     var data = [

@@ -1,38 +1,95 @@
 <% include ../partials/header %>
     <div class="row">
-        <h1 style="text-align: center">Post a New Beer</h1>
-        <div style="width: 30%; margin: 25px auto;">
+        <h1 style="text-align: center"> Create A New Character </h1>
+        <div class="for-form" style="width: 50%; margin: 25px auto;">
             <form action="/beers" method="POST">
-                 <div class="form-group">
-                    <label for="brewery">Brewery Name</label>
-                    <input class="form-control" type="text" name="brewery" id="brewery" placeholder="Russian River">
-                </div>
-                <div class="form-group">
-                    <label for="name">Name</label>
-                    <input class="form-control" type="text" name="name" id="name" placeholder="Pliny the Elder">
-                </div>
-                <div class="form-group">
-                    <label for="image">Image Url</label>
-                    <input class="form-control" type="text" name="image" id="image" pattern="^https:\/\/images\.unsplash\.com\/.*" title="Only images from images.unsplash.com allowed. See link below for instructions." placeholder="https://images.unsplash.com/..." required>
-                    <small>Click <a href="https://youtu.be/Bn3weNRQRDE">here</a> for tutorial on how to copy unsplash urls.</small>
-                </div>
-                <div class="form-group">
-                    <label for="rating">Rating</label>
-                    <input class="form-control" type="number" name="rating" id="rating" placeholder="5.0" step="0.25" min="0.25" max="5.0" required>
-                </div>
-                <div class="form-group">
-                    <label for="cost">Cost</label>
-                    <input class="form-control" type="number" name="cost" id="cost" placeholder="9.99" step="0.01" min="0" required>
-                </div>
-                <div class="form-group">
-                    <label for="style">Description</label>
-                    <input class="form-control" type="text" name="style" id="style" placeholder="West Coast IPA">
-                </div>
-                <div class="form-group">
-                    <label for="description">Description</label>
-                    <input class="form-control" type="text" name="description" id="description" placeholder="One of the best rated West Coast IPA in the World">
-                </div>
-                <div class="form-group">
+                  <div class="form-group sex">
+                    <label for="sex">Choose a Sex</label> <br />
+                    <input class="toggle" type="radio" id="toggle-male" value="Male" name="sex_toggle" checked>
+                    <label class="btn" for="toggle-male">Male</label>
+                    <input class="toggle" type="radio" id="toggle-female" value="Female" name="sex_toggle">
+                    <label class="btn female" for="toggle-female">Female</label> 
+                   </div>
+                   <div class="form-group race">
+                    <label for="race">Choose a Race</label> <br />
+                    <input class="toggle" type="radio" id="toggle-human" name="race_toggle" value="Human" checked>
+                    <label class="btn" for="toggle-human">Human</label>
+                    <input class="toggle" type="radio" id="toggle-elf" name="race_toggle" value="Elf">
+                    <label class="btn" for="toggle-elf">Elf</label> 
+                    <input class="toggle" type="radio" id="toggle-orc" name="race_toggle" value="Orc">
+                    <label class="btn" for="toggle-orc">Orc</label> 
+                    <input class="toggle" type="radio" id="toggle-dwarf" name="race_toggle" value="Dwarf">
+                    <label class="btn" for="toggle-dwarf">Dwarf</label> 
+                    <input class="toggle" type="radio" id="toggle-centaur" name="race_toggle" value="Centaur">
+                    <label class="btn" for="toggle-centaur">Centaur</label> 
+                   </div>
+                     <div class="form-group cclass">
+                    <label for="class">Choose a Class</label> <br />
+                    <input class="toggle" type="radio" id="toggle-bard" name="class_toggle" value="Bard" checked>
+                    <label class="btn" for="toggle-bard">Bard</label>
+                    <input class="toggle" type="radio" id="toggle-druid" name="class_toggle" value="Druid">
+                    <label class="btn" for="toggle-druid">Druid</label>
+                    <input class="toggle" type="radio" id="toggle-hunter" name="class_toggle" value="Hunter">
+                    <label class="btn" for="toggle-hunter">Hunter</label>
+                    <input class="toggle" type="radio" id="toggle-paladin" name="class_toggle" value="Paladin">
+                    <label class="btn" for="toggle-paladin">Paladin</label>
+                    <input class="toggle" type="radio" id="toggle-rogue" name="class_toggle" value="Rogue">
+                    <label class="btn" for="toggle-rogue">Rogue</label>
+                    <input class="toggle" type="radio" id="toggle-warrior" name="class_toggle" value="Warrior">
+                    <label class="btn" for="toggle-warrior">Warrior</label>
+                    <input class="toggle" type="radio" id="toggle-wizard" name="class_toggle" value="Wizard">
+                    <label class="btn" for="toggle-wizard">Wizard</label>
+                   </div>
+                   
+                <div class="form-group role">
+                    <label for="role">Choose a Role</label> <br />
+                    <input class="toggle" type="radio" id="toggle-healer" name="role_toggle" value="Healer" checked>
+                    <label class="btn" for="toggle-healer">Healer</label>
+                    <input class="toggle" type="radio" id="toggle-melee" name="role_toggle" value="Melee">
+                    <label class="btn" for="toggle-melee">Melee</label> 
+                    <input class="toggle" type="radio" id="toggle-ranged" name="role_toggle" value="Ranged">
+                    <label class="btn" for="toggle-ranged">Ranged</label> 
+                    <input class="toggle" type="radio" id="toggle-tank" name="role_toggle" value="Tank">
+                    <label class="btn" for="toggle-tank">Tank</label> 
+                 </div>
+                 <div class="form-group cstyle">
+                    <label for="style">Choose a Teamwork Mentality</label> <br />
+                    <input class="toggle" type="radio" id="toggle-follower" name="style_toggle" value="Follower" checked>
+                    <label class="btn" for="toggle-follower">Follower</label>
+                    <input class="toggle" type="radio" id="toggle-leader" name="style_toggle" value="Leader">
+                    <label class="btn" for="toggle-leader">Leader</label> 
+                    <input class="toggle" type="radio" id="toggle-lonewolf" name="style_toggle" value="Lonewolf">
+                    <label class="btn" for="toggle-lonewolf">Lone Wolf</label> 
+                    <input class="toggle" type="radio" id="toggle-teamplayer" name="style_toggle" value="Teamplayer">
+                    <label class="btn" for="toggle-teamplayer">Team Player</label> 
+                 </div>
+                 <div class="form-group disposition">
+                    <label for="style">Choose a Personality Trait</label> <br />
+                    <input class="toggle" type="radio" id="toggle-ambivalent" name="disposition_toggle" value="Ambivalent" checked>
+                    <label class="btn" for="toggle-ambivalent">Ambivalent</label>
+                    <input class="toggle" type="radio" id="toggle-happy" name="disposition_toggle" value="Happy">
+                    <label class="btn" for="toggle-happy">Happy</label> 
+                    <input class="toggle" type="radio" id="toggle-helpful" name="disposition_toggle" value="Helpful">
+                    <label class="btn" for="toggle-helpful">Helpful</label> 
+                    <input class="toggle" type="radio" id="toggle-rude" name="disposition_toggle" value="Rude">
+                    <label class="btn" for="toggle-rude">Rude</label> 
+                    <input class="toggle" type="radio" id="toggle-sarcastic" name="disposition_toggle" value="Sarcastic">
+                    <label class="btn" for="toggle-sarcastic">Sarcastic</label> 
+                 </div>
+                 <div class="form-group force">
+                    <label for="style">Choose a Force Alignment</label> <br />
+                    <input class="toggle" type="radio" id="toggle-light" name="force_toggle" value="Light" checked>
+                    <label class="btn" for="toggle-light">Light Sided</label>
+                    <input class="toggle" type="radio" id="toggle-leanlight" name="force_toggle" value="Leanlight">
+                    <label class="btn" for="toggle-leanlight">Lean Light</label> 
+                    <input class="toggle" type="radio" id="toggle-grey" name="force_toggle" value="Grey">
+                    <label class="btn" for="toggle-grey">Grey</label> 
+                    <input class="toggle" type="radio" id="toggle-leandark" name="force_toggle" value="Leandark">
+                    <label class="btn" for="toggle-leandark">Lean Dark</label> 
+                    <input class="toggle" type="radio" id="toggle-dark" name="force_toggle" value="Dark">
+                    <label class="btn" for="toggle-dark">Dark Sided</label> 
+                 </div>
+                <div class="form-group fsubmit">
                     <button class="btn btn-lg btn-primary btn-block">Submit!</button>
                 </div>
             </form>
