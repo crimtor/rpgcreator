@@ -2,6 +2,7 @@ var Comment = require('../models/comment');
 var Beer = require('../models/character');
 
 module.exports = {
+  
   isLoggedIn: function(req, res, next){
       if(req.isAuthenticated()){
           return next();

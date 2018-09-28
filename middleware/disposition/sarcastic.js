@@ -1,3 +1,0 @@
-var sarcastic = {
-    disposition: "Sarcastic"
-};

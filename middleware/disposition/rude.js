@@ -1,3 +1,0 @@
-var party = {
-    disposition: "Party"
-};

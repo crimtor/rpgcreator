@@ -1,3 +1,0 @@
-var ambivalent = {
-    disposition: "Ambivalent"
-};

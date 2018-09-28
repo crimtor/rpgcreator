@@ -50,31 +50,32 @@ router.get("/", function(req, res){
 // });
 
 //CREATE - add new beer to DB
-router.post("/", isLoggedIn, isSafe, function(req, res){
+router.post("/", isLoggedIn, function(req, res){
   // get data from form and add to beers array
-  var brewery = req.body.brewery;
-  var name = req.body.name;
-  var image = req.body.image;
-  var desc = req.body.description;
-  var styl = req.body.style;
-  var rating = req.body.rating;
+  console.log(req.body);
+  var sex = req.body.sex_toggle;
+  var race = req.body.race_toggle;
+  var cclass = req.body.class_toggle;
+  var role = req.body.role_toggle;
+  var style = req.body.style_toggle;
+  var disposition = req.body.disposition_toggle;
+  var force = req.body.force_toggle;
   var author = {
       id: req.user._id,
       username: req.user.username
   };
-  var cost = req.body.cost;
     
-var newBeer = {brewery: brewery, name: name, image: image, description: desc, style: styl, rating: rating, cost: cost, author:author};
+var newChar = {sex: sex, race: race, cclass: cclass, role: role, style: style, disposition: disposition, force: force, author:author};
     // Create a new beer and save to DB
     Beer.create(newBeer, function(err, newlyCreated){
         if(err){
             console.log(err);
         } else {
-            //redirect back to beers page
+            redirect back to beers page
             req.flash('success', 'New Beer Created');
             res.redirect("/characters");
-        }
-    });
+        // }
+    // });
 });
 
 //NEW - show form to create new beer

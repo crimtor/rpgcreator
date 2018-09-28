@@ -1,3 +1,0 @@
-var helpful = {
-    disposition: "Helpful"
-};

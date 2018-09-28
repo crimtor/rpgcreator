@@ -1,0 +1,93 @@
+module.exports = {
+    bard : {
+    name: "Bard",
+       health_points: 1.05,
+       magic_points: 1.1,
+       strength:  1.0,
+       speed: 1.0,
+       stamina: 1.1,
+       intellegence: 1.1, 
+       attack_type:  "melee",
+       attack_power: 1.1,
+       defense_power: 1.0,
+       attack_rate: 0.9
+    },
+    druid: {
+    name: "Druid",
+       health_points: 0.9,
+       magic_points: 1.3,
+       strength:  0.8,
+       speed: 1.1,
+       stamina: 1.1,
+       intellegence: 1.3, 
+       attack_type:  "magic",
+       attack_power: 0.9,
+       defense_power: 0.9,
+       attack_rate: 1.1
+    },
+    hunter: {
+    name: "Hunter",
+       health_points: 1.05,
+       magic_points: 0.8,
+       strength:  1.1,
+       speed: 1.1,
+       stamina: 1.2,
+       intellegence: 1.0, 
+       attack_type:  "ranged",
+       attack_power: 1.1,
+       defense_power: 1.1,
+       attack_rate: 0.9
+    },
+    paladin: {
+    name: "Paladin",
+       health_points: 1.1,
+       magic_points: 1.1,
+       strength:  1.05,
+       speed: 0.9,
+       stamina: 0.9,
+       intellegence: 1.0, 
+       attack_type:  "magic",
+       attack_power: 1.1,
+       defense_power: 1.1,
+       attack_rate: 0.9
+    },
+    rogue: {
+    name: "Rogue",
+       health_points: 1.0,
+       magic_points: 0.8,
+       strength:  0.9,
+       speed: 1.3,
+       stamina: 1.1,
+       intellegence: 1.3, 
+       attack_type:  "melee",
+       attack_power: 0.9,
+       defense_power: 1.0,
+       attack_rate: 1.1
+    },
+    warrior: {
+    name: "Warrior",
+       health_points: 1.1,
+       magic_points: 0.8,
+       strength:  1.2,
+       speed: 1.0,
+       stamina: 1.0,
+       intellegence: 0.8, 
+       attack_type:  "melee",
+       attack_power: 1.1,
+       defense_power: 1.1,
+       attack_rate: 0.9
+    },
+    wizard: {
+    name: "Wizard",
+       health_points: 0.9,
+       magic_points: 1.3,
+       strength:  0.8,
+       speed: 1.1,
+       stamina: 1.0,
+       intellegence: 1.3, 
+       attack_type:  "magic",
+       attack_power: 0.9,
+       defense_power: 0.9,
+       attack_rate: 1.1
+    }
+};
