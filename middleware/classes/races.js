@@ -91,13 +91,7 @@ maleNames: ["Cyrus",
 "Nellie",
 "Elden",
 "Lance",
-"Pranav",
-"Berkeley",
-"Maik",
-"Wanja",
-"Mohamed",
-"Berne",
-"Deandre"],
+"Dave"],
 femaleNames: [
 "Charlotte",
 "Shannon",
@@ -108,14 +102,7 @@ femaleNames: [
 "Joie",
 "Jocelin",
 "Nicola",
-"Claire",
-"Julee",
-"Kaelyn",
-"Scarlet",
-"Bria",
-"Elyse",
-"Tayte"
-]
+"Claire"]
 },
 
 orc: {

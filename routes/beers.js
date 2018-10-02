@@ -4,6 +4,7 @@ var Beer = require("../models/character");
 var Comment = require("../models/comment");
 var middleware = require("../middleware");
 var { isLoggedIn, checkUserBeer, checkUserComment, isAdmin, isSafe } = middleware; // destructuring assignment
+var CreateChar = require("../public/scripts/createChar.js");
 
 // Define escapeRegex function for search feature
 function escapeRegex(text) {
@@ -49,10 +50,9 @@ router.get("/", function(req, res){
 //     });
 // });
 
-//CREATE - add new beer to DB
+//CREATE - add new Character to DB
 router.post("/", isLoggedIn, function(req, res){
   // get data from form and add to beers array
-  console.log(req.body);
   var sex = req.body.sex_toggle;
   var race = req.body.race_toggle;
   var cclass = req.body.class_toggle;
@@ -65,17 +65,19 @@ router.post("/", isLoggedIn, function(req, res){
       username: req.user.username
   };
     
-var newChar = {sex: sex, race: race, cclass: cclass, role: role, style: style, disposition: disposition, force: force, author:author};
+var baseChar = {sex: sex, race: race, char_class: cclass, role: role, group_style: style, disposition: disposition, force_prefrence: force, author:author};
+     var newChar = CreateChar.makeChar(baseChar);
+    
     // Create a new beer and save to DB
-    Beer.create(newBeer, function(err, newlyCreated){
-        if(err){
-            console.log(err);
-        } else {
-            redirect back to beers page
-            req.flash('success', 'New Beer Created');
+     Beer.create(newChar, function(err, newlyCreated){
+         if(err){
+             console.log(err);
+         } else {
+            // redirect back to beers page
+             req.flash('success', 'New Beer Created');
             res.redirect("/characters");
-        // }
-    // });
+         }
+     });
 });
 
 //NEW - show form to create new beer
